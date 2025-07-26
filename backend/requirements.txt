@@ -1,0 +1,9 @@
+flask
+flask-cors
+pandas
+datasets
+langchain
+langchain-openai
+langchain-chroma
+openai
+chromadb
