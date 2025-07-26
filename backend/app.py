@@ -7,8 +7,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Load and prepare once
-# gitaDf = loadAndProcessGita()
-# vectorStore = generateEmbeddings(gitaDf)
+gitaDf = loadAndProcessGita()
+vectorStore = generateEmbeddings(gitaDf)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -20,23 +20,23 @@ def gita():
     question = data.get("question")
     print(f"Question received: {question}")
 
-    # topDocs = retrieveRelevantDocs(question, vectorStore)
-    # verses = explainSelectedVerses(topDocs)
+    topDocs = retrieveRelevantDocs(question, vectorStore)
+    verses = explainSelectedVerses(topDocs)
 
-    verses = [
-        {
-            "verse_no": "2.47",
-            "sanskrit_text": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
-            "translation": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
-            "explanation": "This verse teaches the principle of detached action. Focus on your duty, not on the results."
-        },
-        {
-            "verse_no": "4.7",
-            "sanskrit_text": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत",
-            "translation": "Whenever there is a decline in righteousness, O Bharata, and a rise in unrighteousness, I manifest Myself.",
-            "explanation": "Krishna promises that He will incarnate to protect dharma whenever it is under threat."
-        }
-    ]
+    # verses = [
+    #     {
+    #         "verse_no": "2.47",
+    #         "sanskrit_text": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
+    #         "translation": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+    #         "explanation": "This verse teaches the principle of detached action. Focus on your duty, not on the results."
+    #     },
+    #     {
+    #         "verse_no": "4.7",
+    #         "sanskrit_text": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत",
+    #         "translation": "Whenever there is a decline in righteousness, O Bharata, and a rise in unrighteousness, I manifest Myself.",
+    #         "explanation": "Krishna promises that He will incarnate to protect dharma whenever it is under threat."
+    #     }
+    # ]
 
     return jsonify({
         "verses": [
