@@ -16,6 +16,7 @@ def home():
 
 @app.route("/api/gita", methods=["POST"])
 def gita():
+    print("✅ /api/gita POST route was called")
     data = request.json
     question = data.get("question")
     print(f"Question received: {question}")
