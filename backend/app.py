@@ -26,13 +26,13 @@ def gita():
     verses = [
         {
             "verse_no": "2.47",
-            "sanskrit_text": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन ।",
+            "sanskrit_text": "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
             "translation": "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
             "explanation": "This verse teaches the principle of detached action. Focus on your duty, not on the results."
         },
         {
             "verse_no": "4.7",
-            "sanskrit_text": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत ।",
+            "sanskrit_text": "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत",
             "translation": "Whenever there is a decline in righteousness, O Bharata, and a rise in unrighteousness, I manifest Myself.",
             "explanation": "Krishna promises that He will incarnate to protect dharma whenever it is under threat."
         }
