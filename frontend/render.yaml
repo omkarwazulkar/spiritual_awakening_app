@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: gita-backend
+    env: python
+    plan: free
+    buildCommand: pip install -r backend/requirements.txt
+    startCommand: python backend/app.py
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
