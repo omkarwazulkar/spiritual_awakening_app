@@ -14,9 +14,8 @@ export default function Home() {
     e.preventDefault();
     setLoading(true);
     setResults(null);
-
     try {
-      const response = await axios.post("https://web-production-caa0c.up.railway.app/api/gita", {
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/gita`, {
         question,
       });
       setResults(response.data);
