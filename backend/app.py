@@ -12,6 +12,7 @@ vectorStore = generateEmbeddings(gitaDf)
 
 @app.route("/", methods=["GET"])
 def home():
+    print("Home")
     return "✨ Gita API is running. Use /api/gita with POST requests."
 
 @app.route("/api/gita", methods=["POST"])
@@ -21,8 +22,8 @@ def gita():
     question = data.get("question")
     print(f"Question received: {question}")
 
-    topDocs = retrieveRelevantDocs(question, vectorStore)
-    verses = explainSelectedVerses(topDocs)
+    # topDocs = retrieveRelevantDocs(question, vectorStore)
+    # verses = explainSelectedVerses(topDocs)
 
     return jsonify({
         "verses": [
