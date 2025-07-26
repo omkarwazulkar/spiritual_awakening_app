@@ -10,6 +10,10 @@ CORS(app)
 gitaDf = loadAndProcessGita()
 vectorStore = generateEmbeddings(gitaDf)
 
+@app.route("/", methods=["GET"])
+def home():
+    return "✨ Gita API is running. Use /api/gita with POST requests."
+
 @app.route("/api/gita", methods=["POST"])
 def gita():
     data = request.json
