@@ -98,7 +98,7 @@ def loadAndProcessGita():
 
 # ========== STEP 2: Generate or Load Embeddings ==========
 def generateEmbeddings(df: pd.DataFrame):
-    embeddingModel = OpenAIEmbeddings(model="text-embedding-ada-002")
+    embeddingModel = OpenAIEmbeddings(model="text-embedding-3-small")
 
     if os.path.exists(EMBEDDINGS_DIR) and os.listdir(EMBEDDINGS_DIR):
         print("🔄 Loading existing embeddings from ChromaDB...")
