@@ -7,8 +7,8 @@ app = Flask(__name__)
 CORS(app)
 
 # Load and prepare once
-# gitaDf = loadAndProcessGita()
-# vectorStore = generateEmbeddings(gitaDf)
+gitaDf = loadAndProcessGita()
+vectorStore = generateEmbeddings(gitaDf)
 
 @app.route("/", methods=["GET"])
 def home():
@@ -22,8 +22,8 @@ def gita():
     question = data.get("question")
     print(f"Question received: {question}")
 
-    # topDocs = retrieveRelevantDocs(question, vectorStore)
-    # verses = explainSelectedVerses(topDocs)
+    topDocs = retrieveRelevantDocs(question, vectorStore)
+    verses = explainSelectedVerses(topDocs)
 
     return jsonify({
         "verses": [
